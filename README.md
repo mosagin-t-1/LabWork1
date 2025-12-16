@@ -5,10 +5,10 @@
 st142155@student.spbu.ru
 
 ## Description
-Home assignment LabWork1  
+Home assignment LabWork1
 Implements BMP image processing:
-- Base interface: IImage
-- Classes: BMPImage, BMPHeader
+- Base interface:IImage
+- Classes: BMPImage,BMPHeader
 - Operations: rotate 90° clockwise, rotate 90° counter-clockwise, Gaussian blur (3×3, σ=1.0)
 Works with uncompressed 24-bit BMP.
 
