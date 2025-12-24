@@ -1,3 +1,9 @@
+/*
+ * Mosagin Timofey
+ * st142155@student.spbu.ru
+ * My lab work 1
+ */
+
 #include "bmpheader.h"
 #include <iostream>
 
@@ -64,6 +70,6 @@ void BMPHeader::updateImageSizeAndFileSize(int w, int h) {
 }
 
 int BMPHeader::rowSizeBytes(int w) const {
-    return ((w * 3 + 3) / 4) * 4; 
+    return ((w * 3 + 3) / 4) * 4;
 }
 

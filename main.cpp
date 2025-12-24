@@ -1,3 +1,9 @@
+/*
+ * Mosagin Timofey
+ * st142155@student.spbu.ru
+ * My lab work 1
+ */
+
 #include <iostream>
 #include "bmpimage.h"
 #include "filters.h"
@@ -7,6 +13,7 @@ int main(int argc, char** argv) {
         std::cerr << "Usage: lab1 <input.bmp>\n";
         return 1;
     }
+
     BMPImage img;
     if (!img.load(argv[1])) {
         std::cerr << "Failed to load BMP\n";

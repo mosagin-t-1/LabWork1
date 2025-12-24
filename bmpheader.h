@@ -1,9 +1,19 @@
-#pragma once
+/*
+ * Mosagin Timofey
+ * st142155@student.spbu.ru
+ * My lab work 1
+ */
+
+#ifndef BMPHEADER_H
+#define BMPHEADER_H
+
 #include <cstdint>
 #include <istream>
 #include <ostream>
+
 #include "pixel.h"
-#pragma pack(push,1)
+
+#pragma pack(push, 1)
 struct BMPFileHeader {
     uint16_t bfType;
     uint32_t bfSize;
@@ -11,6 +21,7 @@ struct BMPFileHeader {
     uint16_t bfReserved2;
     uint32_t bfOffBits;
 };
+
 struct BMPInfoHeader {
     uint32_t biSize;
     int32_t  biWidth;
@@ -29,8 +40,10 @@ struct BMPInfoHeader {
 class BMPHeader {
     BMPFileHeader fh{};
     BMPInfoHeader ih{};
+
 public:
     BMPHeader() = default;
+
     bool read(std::istream &in);
     bool write(std::ostream &out) const;
     bool isValid() const;
@@ -41,6 +54,7 @@ public:
     uint32_t dataOffset() const;
     void setDefaults(int w, int h);
     void updateImageSizeAndFileSize(int w, int h);
-    int rowSizeBytes(int w) const; 
+    int rowSizeBytes(int w) const;
 };
 
+#endif

@@ -1,6 +1,15 @@
-#pragma once
+/*
+ * Mosagin Timofey
+ * st142155@student.spbu.ru
+ * My lab work 1
+ */
+
+#ifndef BMPIMAGE_H
+#define BMPIMAGE_H
+
 #include "bmpheader.h"
-#include "bmpheader.h"
+#include "pixel.h"
+
 #include <vector>
 #include <string>
 
@@ -16,11 +25,14 @@ public:
 };
 
 class BMPImage : public IImage {
-    int w = 0, h = 0;
+    int w = 0;
+    int h = 0;
     std::vector<Pixel> pixels;
     BMPHeader header;
+
 public:
     BMPImage() = default;
+
     bool load(const std::string &path) override;
     bool save(const std::string &path) const override;
     int width() const override;
@@ -30,3 +42,4 @@ public:
     void setSize(int ww, int hh);
 };
 
+#endif
