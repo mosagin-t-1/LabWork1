@@ -40,6 +40,8 @@ struct BMPInfoHeader {
 class BMPHeader {
     BMPFileHeader fh{};
     BMPInfoHeader ih{};
+    static constexpr int BYTES_PER_PIXEL = 3;
+    static constexpr int ROW_ALIGNMENT = 4; 
 
 public:
     BMPHeader() = default;

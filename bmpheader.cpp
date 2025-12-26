@@ -70,6 +70,7 @@ void BMPHeader::updateImageSizeAndFileSize(int w, int h) {
 }
 
 int BMPHeader::rowSizeBytes(int w) const {
-    return ((w * 3 + 3) / 4) * 4;
+    const int rawRowSize = w * BYTES_PER_PIXEL;
+    return ((rawRowSize + ROW_ALIGNMENT - 1) / ROW_ALIGNMENT) * ROW_ALIGNMENT;
 }
 
